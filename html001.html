@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a{
+			position: absolute;
+			/*z-index: 2;*/
+		}
+		li{
+			line-height: 50px;
+			flex: 1;
+			height: 100%;
+			text-align: center;
+			display: inline-block;
+			padding-left: 20px;
+		}
+		ul{
+			display: flex;
+			position: relative;
+			justify-content: space-around;
+			height: 50px;
+			text-align: center;
+			background-color: gray;
+		}
+	/*	ul li:nth-child(1):hover~div{
+			left: 160px;
+		}
+		ul li:nth-child(2):hover~div{
+			left: 670px;
+		}
+		ul li:nth-child(3):hover~div{
+			left: 1200px;
+		}
+		li:hover{
+			background-color: green;
+		}*/
+		div{
+			position: absolute;
+			background-color: yellow;
+			width: 200px;
+			height: 50px;
+			bottom: 0;
+			left: 5%;
+			transition: 2s linear;
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+<ul>
+	<div id="cursor"></div>
+	<li><a>111</a></li>
+	<li>222</li>
+	<li>333</li>
+	
+</ul>
+<a href="http://www.baidu.com">胡家旗</a>
+</body>
+</html>
+<script type="text/javascript">
+	var liArr = document.getElementsByTagName('li');
+	var cursor = document.getElementById('cursor');
+	for(var i = 0; i < liArr.length; i++)
+	{
+		liArr[i].onclick = function(){
+			console.log(this.style.left);
+		cursor.style.left = this.style.left + '160px';
+		}
+	}
+</script>

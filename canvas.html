@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	canvas{
+		width: 300px;
+		height: 200px;
+		/*background-color: red;*/
+	}
+	video{
+		/*controls: controls;*/
+		/*height: 400px;*/
+		width: 300px;
+	}
+</style>
+</head>
+<body>
+	<video controls="controls" src="img/vido.mp4"></video>
+	<button onclick="screenShot()">截屏</button>
+<canvas></canvas>
+</body>
+</html>
+<script type="text/javascript">
+	var video = document.getElementsByTagName('video')[0];
+	var button = document.getElementsByTagName('button')[0];
+	var canvas = document.getElementsByTagName('canvas')[0];
+
+	function screenShot()
+	{
+		console.log(1);
+		canvas.getContext('2d').drawImage(video,0,0,300,180);
+	}
+	setInterval(function() {
+		canvas.getContext('2d').drawImage(video,0,0,300,180);
+	},20);
+</script>

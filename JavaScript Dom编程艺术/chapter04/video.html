@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .play{
+            /*content: "";*/
+            width: 50px;
+            height: 50px;
+            /*margin-right: -20px;*/
+            /*border-width: 50px;*/
+            /*border-style: solid;*/
+            /*border-color: black transparent transparent transparent*/
+        }
+        .progressBar
+        {
+            width: 400px;
+            height: 10px;
+            background-color: red;
+            border-radius: 5px;
+            display: inline-block;
+            position: relative;
+        }
+        .progressPoint
+        {
+            width: 15px;
+            height: 15px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            background-color: #333333;
+            top: -2.5px;
+        }
+    </style>
+</head>
+<body>
+<div>
+<video controls>
+    <source src="../../img/vido.mp4">
+    <source src="../../img/vido.webm" type="video/ogg";codecs="vp8,vorbis">
+    <a href="../../img/vido.mp4">vido.mp4</a>
+</video>
+</div>
+</body>
+</html>
+<script>
+    var div = document.getElementsByTagName('div')[0];
+    var video = document.getElementsByTagName('video')[0];
+    video.removeAttribute("controls");
+    //创建控制组件
+    var controls = document.createElement('div');
+    var play = document.createElement('button');
+    var progressBar = document.createElement("div");
+    var progressPoint = document.createElement("div");
+    //设置控制组件
+    progressPoint.setAttribute('class',"progressPoint");
+    // progressPoint.setAttribute("draggable","true");
+    progressBar.setAttribute('class',"progressBar");
+    play.setAttribute('title','Play');
+    play.setAttribute('value',"Play");
+    play.setAttribute('class',"play");
+    play.innerHTML = '&#x25BA;';
+    //给controls添加组件
+    controls.appendChild(play);
+    controls.appendChild(progressBar);
+    div.appendChild(controls);
+    progressBar.appendChild(progressPoint);
+    play.onclick = function () {
+        if(video.paused)
+        {
+            video.play();
+            play.innerHTML="&#x2590;&#x2590";
+        }else
+            {
+                video.pause();
+                play.innerHTML = '&#x25BA;';
+            }
+    }
+    var length = video.duration-0;
+    var location = video.currentTime-0;
+    setInterval(function () {
+
+        // var length = video.duration;
+        // console.log();
+        console.log(location/length);
+        var pointLocation = (location/length)*400;
+        progressPoint.style.left= pointLocation + "px";
+    },500);
+    var ismove = false;
+    var x;
+    progressPoint.onmousedown = function (e) {
+        e = e || window.event;
+        x = e.clientX - progressPoint.offsetLeft;
+        ismove = true;
+    };
+    document.onmousemove = function (e) {
+       if (ismove)
+       {
+           e = e || window.event;
+           progressPoint.style.left = e.clientX - x + "px";
+           left = e.clientX - x;
+           video.currentTime = ((left)/400)*length;
+           console.log(length);
+       }
+    };
+    document.onmouseup = function (ev) {
+        ismove=false;
+
+    };
+</script>

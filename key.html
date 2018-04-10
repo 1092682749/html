@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .divS
+        {
+            height: 100px;
+            background-color: red;
+        }
+        .divST
+        {
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="dd" class="divS"></div>
+</body>
+</html>
+<script>
+    var des =new Array();
+    var dd = document.getElementById("dd");
+    // dd.setAttribute("class","divST");
+    dd.className="divST";
+    des["1"]="11";
+    des["2"]="22";
+    console.log(des["1"]+" "+des["2"]);
+</script>

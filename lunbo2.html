@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/lunbo2.css">
+	<title></title>
+</head>
+<body>
+<div id="box">
+	<div id="content">
+		<img src="img/11.jpg">
+		<img src="img/12.jpg">
+		<img src="img/13.jpg">
+		<img src="img/14.jpg">
+		<img src="img/15.jpg">
+	</div>
+</div>
+<div id="select">
+	<button onclick="move(0)">1</button>
+	<button onclick="move(1)">2</button>
+	<button onclick="move(2)">3</button>
+	<button onclick="move(3)">4</button>
+	<button onclick="move(4)">5</button>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	var content = document.getElementById('content');
+	function move(num) {
+		content.style.left = -(num * 520) + "px";
+	}
+</script>

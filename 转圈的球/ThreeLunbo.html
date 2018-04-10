@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        img{
+            width: 200px;
+            object-fit: cover;
+        }
+
+        #outBox{
+            width: 200px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            left: 500px;
+        }
+        #mainBox{
+            position: absolute;
+            left: -200px;
+            width: 600px;
+            height: 300px;
+            transition: 1s linear;
+            font-size: 0;
+        }
+        #leftBox{
+               position: absolute;
+               width: 200px;
+               height: 300px;
+            left: -200px;
+           }
+        #rightBox{
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            left: 200px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="outBox">
+    <div id="leftBox"><img></div>
+    <div id="mainBox">
+        <img>
+        <img>
+        <img>
+        <!--<img src="../img/6.png">-->
+    </div>
+    <div id="rightBox"><img></div>
+</div>
+</body>
+</html>
+<script>
+    var picArr=new Array();
+    picArr[0]="../img/1.png";
+    picArr[1]="../img/2.jpeg";
+    picArr[2]="../img/3.jpeg";
+    picArr[3]="../img/4.png";
+    picArr[4]="../img/5.jpeg";
+    picArr[5]="../img/6.png";
+    console.log(picArr);
+    var mainBox=document.getElementById('mainBox');
+    var leftBox=document.getElementById('leftBox');
+    var rightBox=document.getElementById('rightBox');
+    var mainImgArr=document.querySelectorAll('#mainBox img');
+    var leftImg = document.querySelectorAll('#leftBox img')[0];
+    var rightImg = document.querySelectorAll('#rightBox img')[0];
+    index=0;
+    var leftIndex=index-1;
+    var rightIndex=index+1;
+    setMainSrc();
+    setAroundSrc();
+    function setMainSrc() {
+        if(index-1<0)
+        {
+            leftIndex = 5;
+        }else{
+            leftIndex=index-1;
+        }
+        if(index+1>5)
+        {
+            rightIndex=0;
+        }else{
+            rightIndex=index+1;
+        }
+        mainImgArr[0].setAttribute("src",picArr[leftIndex]);
+        mainImgArr[1].setAttribute("src",picArr[index]);
+        mainImgArr[2].setAttribute("src",picArr[rightIndex]);
+    }
+    function setAroundSrc(){
+        leftImg.setAttribute("src",picArr[leftIndex]);
+        rightImg.setAttribute("src",picArr[rightIndex]);
+    }
+    function rightMove() {
+        mainBox.style.left=-400+"px";
+        setTimeout(rightBoxMove,1000);
+        index++;
+        setMainSrc();
+        rollBack();
+        setTimeout(rightBoxRollBack,2000);
+        setTimeout(setAroundSrc(),3000);
+    }
+    function rightBoxMove() {
+        rightBox.style.left=0+"px";
+    }
+    function rightBoxRollBack()
+    {
+        rightBox.style.left=200+"px";
+    }
+    // setInterval(rightMove,2000);
+    setTimeout(rightMove,1000);
+    function rollBack(){
+        mainBox.style.left=-200+"px";
+    }
+</script>

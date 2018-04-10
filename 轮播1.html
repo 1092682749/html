@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="lb1.css">
+	<title></title>
+</head>
+<body>
+<div id="box" class="box">
+	<div id="content" class="content">
+		<img src="img/1.png">
+		<img src="img/2.jpeg">
+		<img src="img/3.jpeg">
+		<img src="img/4.png">
+		<img src="img/1.png">
+	</div>
+	<div id="cheat">
+		<img src="img/1.png">
+	</div>
+	<span id="left" onclick="leftmove()" class="left"><</span>
+	<span id="right" onclick="rightmove()" class="right">></span>
+	<ul class="foot">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+<p id="ww"></p>
+</body>
+</html>
+<script type="text/javascript">
+	var content = document.getElementById('content');
+	var cheat = document.getElementById('cheat');
+	var index = 0;
+	// alert("111");
+	function leftmove()
+	{
+		if (index <= -1000) {index = 200;}
+			content.style.left = index - 200 + "px";
+
+		// setTimeout(move,3000);
+	}
+	function rightmove()
+	{
+		if (index >= 0) {index = -1200;}
+		content.style.left = index + 200 + "px";
+		// setTimeout(move,3000);
+	}
+	function move()
+	{
+		// alert("111");
+		// index = content.style.left;
+		// alert("111");
+		if (index<=-800) {
+			cheat.style.left="0";
+			index = 0;
+			content.style.left = index + "px";
+		}else
+		{
+			cheat.style.left="-1200px";
+			index = index - 200;
+			// alert(index);
+			content.style.left = index + "px";
+		}
+		// alert("111");
+		setTimeout(move,3000);
+		// alert("111");
+
+	}
+	// alert("111");
+	// move();
+	setTimeout(move,3000);
+</script>
+<!-- <script src="js/lb.js"></script> -->
+<script src="js/tween.js"></script>

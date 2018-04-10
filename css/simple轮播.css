@@ -1,0 +1,19 @@
+.box{
+    width: 150px;
+    height: 200px;
+    position: relative;
+    margin-left: 200px;
+    overflow: hidden;
+}
+.content
+{
+    position: absolute;
+    width: 450px;
+    height: 200px;
+    font-size: 0;
+    left: -150px;
+}
+.content img{
+    width: 150px;
+    height: 200px;
+}

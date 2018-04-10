@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="pp">1111111111111111111111111111111111</p>
+<ul>
+    <li name="../../img/1.png">1</li>
+    <li name="../../img/2.jpeg">2</li>
+    <li name="../../img/3.jpeg">3</li>
+    <li name="../../img/4.png">4</li>
+</ul>
+<img>
+</body>
+</html>
+<script>
+    var imgArr = document.querySelectorAll("li");
+    console.log(imgArr);
+    var img = document.querySelector("ul~img");
+
+    for(var i = 0; i < imgArr.length; i++)
+    {
+        imgArr[i].style.cursor="pointer";
+        imgArr[i].onclick = function () {
+            var nameValue = this.getAttribute("name");
+            img.setAttribute("src",nameValue);
+        };
+    }
+    var pp = document.getElementById("pp");
+    pp.setAttribute("style",
+        "column-count:2;" +
+        "column-width:50px;" +
+        "color:red;width:200px;" +
+        "height:200px;" +
+        "background-color:blue;"
+    );
+    console.log(pp);
+</script>

@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#box{
+	width: 520px;
+	height: 280px;
+	position: relative;
+	left: 0;
+	right: 0;
+	margin: auto;
+	overflow: hidden;
+}
+#content{
+	position: absolute;
+	font-size: 0;
+	width: 2600px;
+	height:100%;
+}
+#select{
+	text-align: center;
+}
+button{
+	/*list-style: none;*/
+	/*display: inline-block;*/
+	width: 50px;
+	height: 30px;
+	margin-top: 20px;
+}

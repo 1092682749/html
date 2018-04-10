@@ -1,0 +1,8 @@
+@charset "utf-8";
+.div1{ border: 15px double #FF0099;
+background-image:url(file:///F|/%E5%9B%BE%E7%89%87/%E5%A4%A9%E5%88%80/20161211_210810_3.png);
+background-position:50px 50px;
+width:600px；
+}
+[href^="Un"]{ color:#FCF}
+

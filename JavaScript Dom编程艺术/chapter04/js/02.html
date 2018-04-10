@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="moveBox"></div>
+</body>
+</html>
+<script>
+    var moveBox = document.getElementById("moveBox");
+    moveBox.style.position="absolute";
+    moveBox.style.width="100px";
+    moveBox.style.height="100px";
+    moveBox.style.backgroundColor="red";
+    moveBox.style.left="1px";
+    moveBox.style.top="1px";
+    console.log(moveBox.style.left);
+    var boxLeft = parseInt(moveBox.style.left);
+    var boxTop = parseInt(moveBox.style.top);
+    var num = parseInt("123px");
+    console.log(num);
+    console.log(boxLeft);
+   // function move () {
+     //   if (boxLeft<500)
+     //   {
+            // console.log("123");
+            // boxLeft = parseInt(moveBox.style.left);
+            // moveBox.style.left = boxLeft + 1 +"px";
+            // console.log( boxLeft + 1 +"px");
+      //      boxLeft++;
+      //  }
+       // moveBox.style.left = boxLeft + "px";
+   // }
+   //  function  postionMessage() {
+   //      moveElement(500,500,10);
+    // }
+    // postionMessage();
+    // addLoadEvent(postionMessage());
+    function addLoadEvent(func)
+    {
+        var oldFun = window.onload;
+        if(typeof window.onload!= "function")
+        {
+            window.onload = func;
+        }else{
+            window.onload = function () {
+                oldFun();
+                func();
+            }
+        }
+    }
+    var final_x=500;
+    var final_y=500;
+    var interval=10;
+    function  moveElement() {
+        if (boxTop==final_y&&boxLeft==final_x)
+        {
+            // return true;
+        }
+        if (boxLeft<final_x)
+        {
+            boxLeft++;
+        }
+        if (boxLeft>final_x)
+        {
+            boxLeft--;
+        }
+        if (boxTop<final_y)
+        {
+            boxTop++;
+        }
+        if (boxTop>final_y)
+        {
+            boxTop--;
+        }
+        moveBox.style.left = boxLeft + "px";
+        moveBox.style.top = boxTop + "px";
+        // var repeat = moveElement(final_x,final_y,interval);
+        setTimeout(moveElement,interval);
+    }
+    setTimeout(moveElement,10);
+</script>

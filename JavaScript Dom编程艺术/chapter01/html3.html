@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a:active{
+            color: red;
+        }
+        a:visited{
+            color:blue;
+        }
+        a:hover{
+            color: #3bd126;
+        }
+        a{
+            color: #000;
+            text-decoration: none;
+        }
+        li{
+            margin: 50px 0;
+            position: relative;
+            left: 100px;
+            list-style: none;
+            display: inline-block;
+            /*text-decoration: none;*/
+        }
+        h1{
+            position: relative;
+            left: 100px;
+        }
+        p{
+            position: relative;
+            left: 100px;
+        }
+        body{
+            position: relative;
+            background-color: gray;
+            -webkit-animation: zhendong 2S infinite;
+            -o-animation: zhendong 2S infinite;
+            animation: zhendong 2S infinite;
+        }
+        @keyframes zhendong {
+            25%{
+                top:20px;
+                left: 20px;
+            }
+            50%{
+                top:40px;
+                left: 40px;
+            }
+            75%{
+                top:20px;
+                left: 20px;
+            }
+            100%{
+                top:40px;
+                left: 40px;
+            }
+        }
+        ul:hover~p{
+            display: none;
+        }
+        img{
+            position: relative;
+            left: 100px;
+            width: 200px;
+            object-fit: cover;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>图片库</h1>
+<ul>
+    <li><p>22222</p><a target="_blank" title="dome1" href="../../img/1.png" onclick="shopPic(this);return false;">dome1</a></li>
+    <li><a title="dome2" href="../../img/2.jpeg" onclick="shopPic(this);return false;">dome2</a></li>
+    <li><a title="dome3" href="../../img/3.jpeg" onclick="shopPic(this);return false;">dome3</a></li>
+    <li><a title="dome4" href="../../img/4.png" onclick="shopPic(this);return false;">dome4</a></li>
+    <li><a title="dome5" href="../../img/5.jpeg" onclick="shopPic(this);return false;">dome5</a></li>
+</ul>
+<!--1111111111111111111111111111111111111111111111-->
+<img id="show">
+<p id="text">这是p标签</p>
+</body>
+</html>
+<script src="js/h3.js"></script>

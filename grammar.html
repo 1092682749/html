@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		img{
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			width: 200px;
+			object-fit: cover;
+		}
+		img:hover{
+			/*transslate:50px 60px;*/
+			/*transform: translate(50px,50px);*/
+			transition: 2s linear;
+			transform: translate(50px,50px) scale(1.2,1.2);
+		}
+
+	</style>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<p id="one">
+Hello Word!
+</p>
+
+<div class="tow"></div>
+<ul class="tow">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+
+<select name="lulu" id="">
+	<option value="1"></option>
+</select>
+
+<ul id="three">
+	hi
+	<li>香蕉</li>
+	<li>苹果</li>
+	<li>黄瓜</li>
+	<li>菠萝</li>
+	H
+	eqqwww
+	l
+	l
+	o
+	<li>榴莲</li>
+	<li>菠萝</li>
+</ul>
+
+<ul id="hello">
+	哈哈1111
+</ul>
+</body>
+</html>
+<script>
+	var img = document.createElement('img');
+	img.src='img/1.png';
+	document.body.appendChild(img);
+	// img:hover.style.transform=scale(0.5,0.5);
+	var pTime = document.getElementsByTagName('p');
+	// pTime[0].innerHTML="111";
+	function timeChange() {
+        pTime[0].innerHTML=Date();
+    }
+		setInterval(timeChange,500);
+	var threeLiArr = document.querySelectorAll('#three li');
+	threeLiArr[0].innerHTML="1111";
+	var tagsDivLi = document.querySelectorAll('div,li');
+	tagsDivLi[0].style.height="200px";
+	tagsDivLi[0].style.backgroundColor="red";
+	var nameSelect = document.getElementsByName('lulu');
+	var threeId = document.getElementById('three');
+	console.log(threeId);
+	console.log(threeId.childNodes);
+	console.log(threeId.firstChild);
+	nameSelect[0].style.color="red";
+	console.log(tagsDivLi);
+	console.log(threeLiArr);
+	console.log(document);
+	console.log(document.type);
+
+</script>

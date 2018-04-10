@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #progressBar
+        {
+            padding-top: 1px;
+            width: 400px;
+            height: 10px;
+            background-color: red;
+            border-radius: 5px;
+            display: inline-block;
+            position: relative;
+        }
+        #progressPoint
+        {
+            width: 15px;
+            height: 15px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            background-color: wheat;
+            top: -2.5px;
+        }
+        #current{
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            width: 10px;
+            height: 7px;
+            background-color: #333333;
+            position: absolute;
+            left: 0;
+            /*right: 0;*/
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="progressBar">
+
+    <div id="current"></div>
+    <div id="progressPoint"></div>
+</div>
+</body>
+</html>
+<script>
+    var progressBar = document.getElementById('progressBar');
+    var progressPoint = document.getElementById('progressPoint');
+    var current = document.getElementById("current");
+    var x;
+    var isMove=false;
+    progressBar.style.width = "400px";
+    progressPoint.draggable = false;
+    progressPoint.onmousedown = function (e) {
+        e = e || window.event;
+        x = e.clientX - progressPoint.offsetLeft;
+        isMove = true;
+    };
+    document.onmousemove = function (e) {
+        if (isMove)
+        {
+            e = e || window.event;
+
+            console.log(parseInt(progressBar.style.width));
+            if ((e.clientX - x) < (parseInt(progressBar.style.width)-15)&&(e.clientX - x) > 0)
+            {
+                progressPoint.style.left = e.clientX - x + "px";
+                current.style.width = e.clientX - x + "px";
+            }
+        }
+    };
+    document.onmouseup = function (ev) {
+        isMove=false;
+    };
+</script>
