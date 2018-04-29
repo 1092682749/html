@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"/>
+<head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu{
+            display: inline-block;
+            position: relative;
+            width: 150px;
+            height: 700px;
+            background-color: #05224d;
+            border: 1px solid #05224d;
+            text-align: center;
+            /*line-height: 20%;*/
+            line-height: 50px;
+        }
+        .menuTable a{
+            font-size: 0.8rem;
+            color: white;
+            text-decoration: none;
+            display: block;
+            /*border: solid 1px #666666;*/
+        }
+        .menuTable td{
+            border: 1px solid #666666;
+        }
+        .menuTable{
+            border: 1px solid #666666;
+            border-collapse: collapse;
+            position: absolute;
+            width: 100px;
+            top: 100px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .moreManage{
+            position: relative;
+        }
+        .navigation{
+            display: none;
+            position: absolute;
+            width: 100px;
+            background-color: #05224d;
+            right: -100px;
+            top: 0px;
+        }
+        .moreManage:hover .navigation{
+            display: block;
+        }
+        .navigation a:hover{
+            background-color: #6389ff;
+        }
+        .allFrame{
+            width: calc(100% - 152px);
+            position: absolute;
+            left: 152px;
+        }
+        .topTip{
+            display: inline-block;
+            left: 200px;
+            width: 70%;
+            height: 35px;
+            background-color: #000027;
+            color: white;
+            line-height: 35px;
+            position: absolute;
+            top: 0;
+            /*left: 200px;*/
+
+        }
+        #addBanner{
+            width: 150px;
+            height: 45px;
+            background-color: #1988cb;
+            color: white;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            position: absolute;
+            top: 50px;
+            left: 200px;
+        }
+        .bannerTable{
+            position: absolute;
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 70%;
+            left: 200px;
+            top: 120px;
+        }
+        .bannerTable th{
+            border: 1px solid #666666;
+            background-color: #200f30;
+            color: white;
+            /*height: 20px;*/
+            line-height: 40px;
+        }
+        .bannerTable td{
+            border: 1px solid #666666;
+            text-align: center;
+        }
+        .bannerTable img{
+            width: 50%;
+            object-fit: contain;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="menu">
+        <table class="menuTable">
+
+            <tr>
+                <td>
+                    <a href="bannerManage.html" target="manageContext">轮播图管理</a>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="bannerManage.html" target="manageContext">用户管理</a>
+                </td>
+
+            </tr>
+
+            <tr class="moreManage">
+                <td>
+                    <a href=bannerManage.html target="manageContext">商品管理+</a>
+                    <div class="navigation">
+                        <a>品类管理</a>
+                        <a>商品管理</a>
+                    </div>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="bannerManage.html" target="manageContext">订单管理</a>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="bannerManage.html" target="manageContext">配送费管理</a>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="bannerManage.html" target="manageContext">系统消息</a>
+                </td>
+
+            </tr>
+
+            <tr class="moreManage">
+                <td>
+                    <a href="bannerManage.html" target="manageContext">系统管理+</a>
+                    <div class="navigation">
+                        <a>角色管理</a>
+                        <a>权限管理</a>
+                    </div>
+                </td>
+
+            </tr>
+
+        </table>
+    </div>
+    <div class="topTip">轮播图表</div>
+    <button id="addBanner">+新增轮播图</button>
+    <table class="bannerTable">
+        <tr>
+            <th>序号</th>
+            <th>轮播图片</th>
+            <th>排序</th>
+            <th>新增日期</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td class="imgTd"><img src="img/1.png"/></td>
+            <td>2</td>
+            <td>2018-4-29</td>
+            <td>
+                <a>增</a>
+                <a>增</a>
+                <a>增</a>
+            </td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+
+        </tr>
+    </table>
+</body>
+</html>
